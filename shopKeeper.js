@@ -45,13 +45,13 @@ const shopKeeper = async (email, password) => {
 
     await page.waitForTimeout(2000);
 
-    const pathRevenue =
+    const pathProfit =
       "#app_sales_overview > div.block.block-bordered > div.block-content.remove-padding-t > div > div.wrapper-row-totals.row-totals-top > div > div:nth-child(5) > div.h4.font-w600.resp-h4.main-indicator.text-success";
-    const pathCA =
+    const pathRevenue =
       "#app_sales_overview > div.block.block-bordered > div.block-content.remove-padding-t > div > div.wrapper-row-totals.row-totals-top > div > div:nth-child(4) > div";
 
     const todayRevenue = await page.$eval(pathRevenue, el => el.textContent);
-    const todayProfit = await page.$eval(pathCA, el => el.textContent);
+    const todayProfit = await page.$eval(pathProfit, el => el.textContent);
 
     console.log("DEBUG : select yesterday data");
 
@@ -65,7 +65,7 @@ const shopKeeper = async (email, password) => {
       pathRevenue,
       el => el.textContent
     );
-    const yesterdayProfit = await page.$eval(pathCA, el => el.textContent);
+    const yesterdayProfit = await page.$eval(pathProfit, el => el.textContent);
 
     console.log("DEBUG : select this month data");
 
@@ -79,7 +79,7 @@ const shopKeeper = async (email, password) => {
       pathRevenue,
       el => el.textContent
     );
-    const thisMonthProfit = await page.$eval(pathCA, el => el.textContent);
+    const thisMonthProfit = await page.$eval(pathProfit, el => el.textContent);
 
     console.log("DEBUG : select year data");
 
@@ -90,7 +90,7 @@ const shopKeeper = async (email, password) => {
     await page.waitForTimeout(2000);
 
     const thisYearRevenue = await page.$eval(pathRevenue, el => el.textContent);
-    const thisYearProfit = await page.$eval(pathCA, el => el.textContent);
+    const thisYearProfit = await page.$eval(pathProfit, el => el.textContent);
 
     await Promise.all([
       page.goto("https://shopkeeper.com/dashboard"),
