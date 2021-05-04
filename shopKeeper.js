@@ -46,9 +46,9 @@ const shopKeeper = async (email, password) => {
     await page.waitForTimeout(2000);
 
     const pathProfit =
-      ".wrapper-row-totals > div > .col-indicator:nth-child(4)";
-    const pathRevenue =
       ".wrapper-row-totals > div > .col-indicator:nth-child(5)";
+    const pathRevenue =
+      ".wrapper-row-totals > div > .col-indicator:nth-child(4)";
 
     const todayRevenue = await page.$eval(pathRevenue, el => el.textContent);
     const todayProfit = await page.$eval(pathProfit, el => el.textContent);
