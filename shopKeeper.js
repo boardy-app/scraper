@@ -46,9 +46,9 @@ const shopKeeper = async (email, password) => {
     await page.waitForTimeout(2000);
 
     const pathProfit =
-      "#app_sales_overview > div.block.block-bordered > div.block-content.remove-padding-t > div > div.wrapper-row-totals.row-totals-top > div > div:nth-child(5) > div.h4.font-w600.resp-h4.main-indicator.text-success";
+      ".wrapper-row-totals > div > .col-indicator:nth-child(4)";
     const pathRevenue =
-      "#app_sales_overview > div.block.block-bordered > div.block-content.remove-padding-t > div > div.wrapper-row-totals.row-totals-top > div > div:nth-child(4) > div";
+      ".wrapper-row-totals > div > .col-indicator:nth-child(5)";
 
     const todayRevenue = await page.$eval(pathRevenue, el => el.textContent);
     const todayProfit = await page.$eval(pathProfit, el => el.textContent);
