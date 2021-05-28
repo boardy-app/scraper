@@ -145,19 +145,19 @@ const shopKeeper = async (email, password) => {
     console.timeEnd("process");
 
     return {
-      todayRevenue: todayRevenue.replace(/[^0-9,-]/g, ""),
-      todayProfit: todayProfit.replace(/[^0-9,-]/g, ""),
-      yesterdayRevenue: yesterdayRevenue.replace(/[^0-9,-]/g, ""),
-      yesterdayProfit: yesterdayProfit.replace(/[^0-9,-]/g, ""),
-      thisMonthRevenue: thisMonthRevenue.replace(/[^0-9,-]/g, ""),
-      thisMonthProfit: thisMonthProfit.replace(/[^0-9,-]/g, ""),
-      thisYearRevenue: thisYearRevenue.replace(/[^0-9,-]/g, ""),
-      thisYearProfit: thisYearProfit.replace(/[^0-9,-]/g, ""),
-      currentStockValue: currentStockValue.replace(/[^0-9,-]/g, ""),
-      currentStock: currentStock.replace(/[^0-9,-]/g, ""),
-      lowStockNb: lowStockNb.replace(/[^0-9,-]/g, ""),
-      outOfStockNb: outOfStockNb.replace(/[^0-9,-]/g, ""),
-      totalBalance: totalBalance.replace(/[^0-9,-]/g, "")
+      todayRevenue: todayRevenue.replace(/[^0-9,.-]/g, ""),
+      todayProfit: todayProfit.replace(/[^0-9,.-]/g, ""),
+      yesterdayRevenue: yesterdayRevenue.replace(/[^0-9,.-]/g, ""),
+      yesterdayProfit: yesterdayProfit.replace(/[^0-9,.-]/g, ""),
+      thisMonthRevenue: thisMonthRevenue.replace(/[^0-9,.-]/g, ""),
+      thisMonthProfit: thisMonthProfit.replace(/[^0-9,.-]/g, ""),
+      thisYearRevenue: thisYearRevenue.replace(/[^0-9,.-]/g, ""),
+      thisYearProfit: thisYearProfit.replace(/[^0-9,.-]/g, ""),
+      currentStockValue: currentStockValue.replace(/[^0-9,.-]/g, ""),
+      currentStock: currentStock.replace(/[^0-9,.-]/g, ""),
+      lowStockNb: lowStockNb.replace(/[^0-9,.-]/g, ""),
+      outOfStockNb: outOfStockNb.replace(/[^0-9,.-]/g, ""),
+      totalBalance: totalBalance.replace(/[^0-9,.-]/g, "")
     };
   } catch (e) {
     console.log("ERROR : " + e);
